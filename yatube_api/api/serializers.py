@@ -12,7 +12,7 @@ class PostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ('id', 'text', 'author', 'pub_date', 'group')
+        fields = ('id', 'text', 'author', 'pub_date', 'image', 'group')
 
 
 class CommentSerializer(serializers.ModelSerializer):
@@ -47,7 +47,7 @@ class FollowSerializer(serializers.ModelSerializer):
     def validate_following(self, value):
         if self.context.get('request').user == value:
             raise serializers.ValidationError(
-                'Вы не можете подписаться на самого себя'
+                'Нельзя подписываться на самого себя!'
             )
         return value
 
@@ -58,6 +58,6 @@ class FollowSerializer(serializers.ModelSerializer):
             UniqueTogetherValidator(
                 queryset=Follow.objects.all(),
                 fields=['user', 'following'],
-                message='Вы уже подписаны на этого автора'
+                message='Вы уже подписаны на этого автора!'
             )
         ]
