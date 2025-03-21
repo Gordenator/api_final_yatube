@@ -1,5 +1,3 @@
-# api_yatube
-api_yatube
 # API YaTube
 
 ## Описание проекта
