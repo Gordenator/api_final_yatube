@@ -1,0 +1,62 @@
+openapi: 3.0.0
+info:
+  title: Yatube API
+  description: API for Yatube project
+  version: 1.0.0
+servers:
+  - url: /api/v1/
+paths:
+  /posts/:
+    get:
+      summary: List of all posts
+      responses:
+        200:
+          description: OK
+  /posts/{id}/:
+    get:
+      summary: Get post by id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: OK
+  /groups/:
+    get:
+      summary: List of all groups
+      responses:
+        200:
+          description: OK
+  /groups/{id}/:
+    get:
+      summary: Get group by id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: OK
+  /posts/{post_id}/comments/:
+    get:
+      summary: Get comments for post
+      parameters:
+        - name: post_id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: OK
+  /follow/:
+    get:
+      summary: Get list of follows
+      responses:
+        200:
+          description: OK 
