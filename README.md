@@ -1,5 +1,3 @@
-# api_yatube
-api_yatube
 # API YaTube
 
 ## Описание проекта
@@ -133,5 +131,5 @@ POST /api/v1/follow/
 }
 ```
 
-## Автор
+
 
